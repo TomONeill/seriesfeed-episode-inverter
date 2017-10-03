@@ -1,0 +1,4 @@
+Seriesfeed Episode Inverter
+
+Version 1.0 (3 October 2017)
+First release.
