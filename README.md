@@ -1,16 +1,16 @@
 # Seriesfeed Episode Inverter
-Allows you to invert the episode list on a series.
+Invert the broadcast schedule, watchlist and episode list on a series.
 <BR/>
 Enjoy.
 <BR/><BR/>
-Version <strong>1.0</strong>
+Version <strong>1.1</strong>
 
 <A HREF="https://github.com/TomONeill/seriesfeed-episode-inverter/raw/master/seriesfeed-episode-inverter-latest.user.js">INSTALL</A>
 
 # Screenshots
-Comparison between the original and with the userscript.<BR />
 <img src="https://raw.githubusercontent.com/TomONeill/seriesfeed-episode-inverter/master/screenshots/watchlist.png"  width="250px" />
 <img src="https://raw.githubusercontent.com/TomONeill/seriesfeed-episode-inverter/master/screenshots/episodes.png" width="250px" />
+<img src="https://raw.githubusercontent.com/TomONeill/seriesfeed-episode-inverter/master/screenshots/series_schedule.png" width="250px" />
 
 # Changelog
 <A HREF="https://raw.githubusercontent.com/TomONeill/seriesfeed-episode-inverter/master/changelog.txt">View changelog</A>

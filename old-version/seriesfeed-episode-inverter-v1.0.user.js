@@ -1,13 +1,11 @@
 ﻿// ==UserScript==
 // @name         Seriesfeed Episode Inverter
 // @namespace    https://www.seriesfeed.com
-// @version      1.1
-// @description  Invert the broadcast schedule, watchlist and episode list on a series.
+// @version      1.0
+// @description  Allows you to invert the episode list on a series.
 // @updateURL 	 https://github.com/TomONeill/seriesfeed-episode-inverter/raw/master/seriesfeed-episode-inverter-latest.user.js
 // @match        https://*.seriesfeed.com/**/episodes
 // @match        https://*.seriesfeed.com/**/episodes/*
-// @match        https://www.seriesfeed.com/series/schedule
-// @match        https://www.seriesfeed.com/series/schedule/*
 // @match        https://www.seriesfeed.com/series/schedule/history
 // @grant        unsafeWindow
 // @grant        GM_getValue
@@ -35,9 +33,9 @@ $(function() {
 		const shouldDescend = GM_getValue("seriesShouldDescend");
 		if (shouldDescend) {
 			invertEpisodes();
-			updateButton(false, "aflopend");
+			updateButton(sortButton, 'up', "aflopend");
 		} else {
-			updateButton(true, "oplopend");
+			updateButton(sortButton, 'down', "oplopend");
 		}
 	}
 
@@ -45,9 +43,9 @@ $(function() {
 		invertEpisodes();
 
 		if (shouldDescend) {
-			updateButton(false, "aflopend");
+			updateButton(sortButton, 'up', "aflopend");
 		} else {
-			updateButton(true, "oplopend");
+			updateButton(sortButton, 'down', "oplopend");
 		}
 	}
 
@@ -60,55 +58,18 @@ $(function() {
 		});
 	}
 
-	function updateButton(rotateIcon180, text) {
-		const icon = sortButton.find('i');
-		if (rotateIcon180) {
-			icon.css({ transform: 'rotate(180deg)' });
-		} else {
-			icon.css({ transform: 'rotate(0)' });
-		}
-		sortButton.find('span').text(text);
+	function updateButton(button, anglePosition, text) {
+		button.html('<i class="fa fa-angle-' + anglePosition + '"></i>' + text);
 	}
 
 	function buttonFactory(onClick) {
-		const button = $('<button/>').addClass('btn btn-default');
-		const icon = $('<i/>').addClass('fa fa-angle-up');
-		const text = $('<span/>');
-		button
-			.append(icon)
-			.append(text)
-			.on('click', onClick);
-
-		icon
-			.css({
-			    transform: 'rotate(0)',
-			    transition: 'transform .3s ease'
-		    });
+		const button = $('<button class="btn btn-default"></button>');
+		button.on('click', onClick);
 
 		return button;
 	}
 
-	if (window.location.href.indexOf("series/schedule") > -1 && window.location.href.indexOf("series/schedule/history") <= -1) {
-		const onClick = () => {
-			const shouldDescend = GM_getValue("scheduleShouldDescend");
-			GM_setValue("scheduleShouldDescend", !shouldDescend);
-			sortEpisodes(!shouldDescend);
-		};
-		sortButton = buttonFactory(onClick);
-		sortButton.addClass('largeFilter').css({ float: 'right' });
-		$(".largeFilter").css({ display: 'inline-block', width: '400px' });
-		$(".largeFilter").after(sortButton);
-
-		const scheduleShouldDescend = GM_getValue("scheduleShouldDescend");
-		if (scheduleShouldDescend) {
-			invertEpisodes();
-			updateButton(false, "aflopend");
-		} else {
-			updateButton(true, "oplopend");
-		}
-	}
-
-	if (window.location.href.indexOf("series/schedule/history") > -1) {
+	if (window.location.href.indexOf("series/schedule") > -1) {
 		const onClick = () => {
 			const shouldAscend = GM_getValue("watchlistShouldAscend");
 			GM_setValue("watchlistShouldAscend", !shouldAscend);
@@ -120,9 +81,9 @@ $(function() {
 		const watchlistShouldAscend = GM_getValue("watchlistShouldAscend");
 		if (watchlistShouldAscend) {
 			invertEpisodes();
-			updateButton(true, "oplopend");
+			updateButton(sortButton, 'down', "oplopend");
 		} else {
-			updateButton(false, "aflopend");
+			updateButton(sortButton, 'up', "aflopend");
 		}
 	}
 });

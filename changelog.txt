@@ -1,4 +1,8 @@
 Seriesfeed Episode Inverter
 
+Version 1.1 (16 October 2017)
+Added series schedule support.
+Added transition for the chevron icon.
+
 Version 1.0 (3 October 2017)
 First release.
