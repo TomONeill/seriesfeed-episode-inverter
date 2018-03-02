@@ -21,7 +21,6 @@ Check out other userscripts for Seriesfeed by me:<BR/>
     <li><A HREF="https://github.com/TomONeill/seriesfeed-transporter">Seriesfeed Transporter</A>: Import and export your favourites and time wasted.</li>
     <li><A HREF="https://github.com/TomONeill/Seriesfeed-Move">Seriesfeed Move</A>: drag and drop frontpage items to your liking.</li>
     <li><A HREF="https://github.com/TomONeill/seriesfeed-favourites-dropdown">Seriesfeed Favourites Dropdown</A>: Choose your favourites from a dropdown on any page, just like Bierdopje!</li>
-    <li><A HREF="https://github.com/TomONeill/seriesfeed-episode-inverter">Seriesfeed Episode Inverter</A>: Choose whether episodes are sorted ascending or descending.</li>
     <li><A HREF="https://github.com/TomONeill/Seriesfeed-Season-Separator">Seriesfeed Season Separator</A>: Draws a thick line between seasons.</li>
 </ul>
 
