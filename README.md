@@ -3,7 +3,7 @@ Invert the broadcast schedule, watchlist and episode list on a series.
 <BR/>
 Enjoy.
 <BR/><BR/>
-Version <strong>1.2</strong>
+Version <strong>1.3</strong>
 
 <A HREF="https://github.com/TomONeill/seriesfeed-episode-inverter/raw/master/seriesfeed-episode-inverter-latest.user.js">INSTALL</A>
 
